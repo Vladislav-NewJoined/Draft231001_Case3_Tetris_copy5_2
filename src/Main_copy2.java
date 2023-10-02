@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Main {
+public class Main_copy2 {
 
     static class brick {
         int[][][] typicalForms = new int[][][]{{{1, 0}, {1, 1}, {1, 2}, {0, 2}}, {{0, 0}, {0, 1}, {0, 2}, {1, 2}},

@@ -1,3 +1,6 @@
+// источник: https://www.youtube.com/watch?v=uuhqubcspPc
+// источник: https://drive.google.com/file/d/1ZzrnYv5qsacdeT4Rj2jQK726d9XDsPdI/view?pli=1
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;

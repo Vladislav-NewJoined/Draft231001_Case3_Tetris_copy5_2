@@ -68,14 +68,15 @@ public class Main_copy2 {
         System.out.println("""
                 Задание:\s
                 Кейс 3. Пошаговый тетрис.\s
-                   Пусть у Вас будет поле 10х10 (двумерный массив char). В случайном месте генерируется 
+                   Пусть у Вас будет поле 10х10 (двумерный массив chart). В случайном месте генерируется 
                    фигура: можно начать с простых форм: …. :: … . : на Ваше усмотрение. Каждый ход считывайте 
                    от игрока: просто опустить фигуру, или ещё сдвинуть ее влево-вправо. Считайте количество очков: 
                    полностью выстроенных линий (таковые сгорают). Когда фигуре некуда упасть, игра закончена. 
                    В файл записывайте рекордное количество очков. Реализуйте по крайней мере два-три класса.
 
                 Решение:\s
-                   Клавиши управления: Сдвиг: Up, Down, Right, Left. Вращение: Insert, Delete.""");
+                   Клавиши управления: Сдвиг: Up, Down, Right, Left. Вращение: Insert, Delete.
+                   Следующая фигура: Down. """);
 
         bricks[NumCurrentBrick] = new brick();
 
@@ -104,7 +105,7 @@ public class Main_copy2 {
     }
 
     static void step(String dir_) {
-        // вычислить направление
+        // задаем клавиши движения
         int dirX = 0;
         int dirY = 0;
 
@@ -123,7 +124,7 @@ public class Main_copy2 {
             rotateRight();
 
 
-        //вычислить коллизию
+        //вычисляем коллизию
         boolean collision = collision(dirX, dirY);
         // если направление вниз - поставить, иначе просто подвинуть
         if (collision && dirY > 0) {
@@ -234,7 +235,7 @@ public class Main_copy2 {
 
     static void ClearFullLines() {
 
-        //найти заполненные линии
+        //ищем заполненные строки
         int[] countOfCellsInLine = new int[field.height];
         for (brick currentBrick : bricks)
             if (currentBrick != null)
@@ -242,21 +243,21 @@ public class Main_copy2 {
                     if (currentCell != null)
                         countOfCellsInLine[currentCell[1] + currentBrick.posY]++;
 
-        //если среди всех линий есть заполненные
+        //если среди всех строк есть заполненные
         for (int currentLineNum = 0; currentLineNum < countOfCellsInLine.length; currentLineNum++) {
             if (countOfCellsInLine[currentLineNum] == field.width) {
 
-                // то отыскать все ячейки лежащие на заполненных линиях
+                // ищем все ячейки, лежащие на заполненных строках
                 for (int currentBrickNum = 0; currentBrickNum < bricks.length; currentBrickNum++)
                     if (bricks[currentBrickNum] != null && currentBrickNum != NumCurrentBrick)
                         for (int currentCellNum = 0; currentCellNum < bricks[currentBrickNum].form.length;
                              currentCellNum++) {
-                            // удалить их
+                            // удалить заполненные строки
                             if (bricks[currentBrickNum].form[currentCellNum] != null)
                                 if (bricks[currentBrickNum].form[currentCellNum][1] + bricks[currentBrickNum].posY
                                         == currentLineNum)
                                     bricks[currentBrickNum].form[currentCellNum] = null;
-                            // те ячейки что выше - опустить
+                            // те ячейки, что выше - опустить
                             if (bricks[currentBrickNum].form[currentCellNum] != null)
                                 if (bricks[currentBrickNum].form[currentCellNum][1] + bricks[currentBrickNum].posY
                                         < currentLineNum)

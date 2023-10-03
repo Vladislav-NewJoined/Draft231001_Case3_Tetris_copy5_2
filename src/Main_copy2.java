@@ -1,5 +1,10 @@
 // источник: https://www.youtube.com/watch?v=uuhqubcspPc
 // источник: https://drive.google.com/file/d/1ZzrnYv5qsacdeT4Rj2jQK726d9XDsPdI/view?pli=1
+// Кейс 3: Мой рабочий кейс - Draft231001_Case3_Tetris_copy5
+// Счет берём отсюда: Draft231001_Case3_Tetris_4copy
+//// источник: https://github.com/mdinep/java-simple-tetris/blob/master/Tetris.java
+// Draft_Task1_3_10_4_6copy  - Отсюда взять табличку, если понадобится
+
 
 import javax.swing.*;
 import java.awt.*;

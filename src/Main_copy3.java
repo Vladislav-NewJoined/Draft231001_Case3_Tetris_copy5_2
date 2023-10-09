@@ -1,6 +1,6 @@
 // источник: https://www.youtube.com/watch?v=uuhqubcspPc
 // источник: https://drive.google.com/file/d/1ZzrnYv5qsacdeT4Rj2jQK726d9XDsPdI/view?pli=1
-// Кейс 3: Мой рабочий кейс - Draft231001_Case3_Tetris_copy5
+// Кейс 3: Мой рабочий кейс - Draft231001_Case3_Tetris_copy5_2
 // Счет берём отсюда: Draft231001_Case3_Tetris_4copy
 //// источник: https://github.com/mdinep/java-simple-tetris/blob/master/Tetris.java
 // Draft_Task1_3_10_4_6copy  - Отсюда взять табличку, если понадобится
@@ -11,7 +11,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Main_copy2 {
+public class Main_copy3 {
 
     static class brick {
         int[][][] typicalForms = new int[][][]{{{1, 0}, {1, 1}, {1, 2}, {0, 2}}, {{0, 0}, {0, 1}, {0, 2}, {1, 2}},
@@ -24,7 +24,7 @@ public class Main_copy2 {
     }
 
     static class Field extends JFrame {
-        int width = 6;
+        int width = 10;
         int height = 10;
 
         {
@@ -38,7 +38,7 @@ public class Main_copy2 {
             //стандартные настройки окна
             setVisible(true);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
-            setSize(300, 600);
+            setSize(420, 430);
 
             clear();
         }
@@ -81,7 +81,8 @@ public class Main_copy2 {
 
                 Решение:\s
                    Клавиши управления: Сдвиг: Up, Down, Right, Left. Вращение: Insert, Delete.
-                   Следующая фигура: Down. """);
+                   Следующая фигура: Down.
+                   Раскладка должна быть переключена на латинский шрифт (ENG).""");
 
         bricks[NumCurrentBrick] = new brick();
 
@@ -271,4 +272,10 @@ public class Main_copy2 {
             }
         }
     }
+
+//    static void paintComponent(Graphics g) {
+//        // Показываем счёт
+//        g.setColor(Color.WHITE);
+//        g.drawString("Счет"/* + score*/, 19*12, 25);
+//    }
 }
